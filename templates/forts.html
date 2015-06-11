@@ -1,5 +1,5 @@
 {% extends "home.html" %} {% block body %}
-<title>foRtReSS - Home</title>
+<title>Strona główna</title>
 <link rel=stylesheet type=text/css
 	href="{{ url_for('static', filename='styles/forts.css') }}">
 {% if loginfo %}<div id="loginfo">{{ loginfo }}</div>{% endif %}
@@ -8,13 +8,12 @@
 	<div id="addfort">
 		<form action="{{ url_for('addfort') }}" method="post">
 			<input type=hidden name=_csrf_token value="{{ csrf_token() }}">
-			<div id="avat" style="background-color: {{ bgcolor[session.logged_user] }};color: {{ color[session.logged_user] }}">{{ session.logged_user[0].upper() }}</div>
 			<p>
 				<textarea id="fort" maxlength="150" name="text"
-					placeholder="Fort your thoughts..."></textarea>
+					placeholder="Miejsce na Twoją notatkę"></textarea>
 			</p>
 			<p>
-				<input class="submit-btn" type="submit" value="Post">
+				<input class="submit-btn" type="submit" value="Wyślij">
 			</p>
 		</form>
 	</div>
@@ -24,14 +23,9 @@
 	<ul id="fortlist">
 		{% for entry in entries %}
 		<li><div id="fortitem">
-				<div id="avat"
-					style="background-color: {{ bgcolor[entry.author] }};color: {{ color[entry.author] }}" >{{
-					entry.author[0].upper() }}</div>
 				<div id="login"><a href="{{ url_for('view',author=entry.author) }}">{{ entry.author }}</a></div>
 				<div id="content">{{ entry.text }}</div>
 			</div></li> {% else %} {% if not session.logged_in %}
-		<div id="welcome">Welcome to</div>
-		<div id="titlefor">foRtReSS</div>
 		{% endif %} {% endfor %}
 	</ul>
 </div>

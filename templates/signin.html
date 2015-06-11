@@ -1,36 +1,34 @@
 <html>
 <head>
-<link rel=stylesheet type=text/css
-	href="{{ url_for('static', filename='styles/signin.css') }}">
 <script type=text/javascript
 	src="{{ url_for('static', filename='scripts/jquery.min.js') }}"></script>
-<title>foRtReSS - Sign In</title>
+<title>Logowanie</title>
 </head>
 <body>
-	<p id="logo">
-		<a href="{{ url_for('home') }}">foRtReSS</a>
+	<p>
+		<a href="{{ url_for('home') }}">Strona główna</a>
 	</p>
 	<div id="signinbox">
-		<p id="boxtitle">Sign In</p>
+		<p>Logowanie</p>
 		{% if error %}<p id="errorbox">{{error}}</p>{% endif %}
 		<form action="{{ url_for('signin') }}" method="post">
 			<input type=hidden name=_csrf_token value="{{ csrf_token() }}">
 			<p>
-				<input id="username-fld" maxlength="10" autofocus="autofocus" name="username" placeholder="Username"
+				<input id="username-fld" maxlength="10" autofocus="autofocus" name="username" placeholder="Nazwa użytkownika"
 					type="text">
 			</p>
 			<p>
-				<input id="password-fld" maxlength="16" name="password" placeholder="Password"
+				<input id="password-fld" maxlength="16" name="password" placeholder="Hasło"
 					type="password">
 			</p>
-			<p id="forgot">
-				<a href="{{ url_for('forgot') }}">Forgot password?</a>
+			<p>
+				<a href="{{ url_for('forgot') }}">Zapomniałeś/aś hasła?</a>
 			</p>
 			<p>
-				<input class="submit-btn" type="submit" value="Sign In">
+				<input type="submit" value="Zaloguj">
 			</p>
-			<p id="signup">
-				<a href="{{ url_for('signup') }}">Don't have an account? Sign Up</a>
+			<p>
+				<a href="{{ url_for('signup') }}">Nie masz konta? Zarejestruj się</a>
 			</p>
 		</form>
 	</div>
