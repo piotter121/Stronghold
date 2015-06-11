@@ -329,4 +329,4 @@ def generate_csrf_token():
 app.jinja_env.globals['csrf_token'] = generate_csrf_token
 
 if __name__ == "__main__":
-	app.run(host='0.0.0.0', port=8000, debug=True, ssl_context=('certificate/server.crt', 'certificate/server.key'))
+	app.run(host='0.0.0.0', port=8000, debug=True, ssl_context=('certifacates/server.crt', 'certifacates/server.key'))
