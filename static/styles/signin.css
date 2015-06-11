@@ -1,0 +1,111 @@
+@font-face {
+	font-family: Ubuntu;
+	src: url("../fonts/Ubuntu.ttf");
+}
+
+@font-face {
+	font-family: VVM;
+	src: url("../fonts/VerminVibesMert.ttf");
+}
+
+* {
+	margin: 0px;
+	padding: 0px;
+	border: none;
+	font-family: Ubuntu;
+}
+
+body {
+	background-image: url("../images/2.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+}
+
+#logo {
+	margin-top: 40px;
+	margin-bottom: 40px;
+	text-align: center;
+	font-size: 150px;
+	text-shadow: 5px 5px 3px #202020;
+}
+
+#logo a, #logo a:hover, #logo a:visited, #logo a:active {
+	text-decoration: none;
+	font-family: VVM;
+	color: rgba(208,208,208,0.8);
+}
+
+#signinbox {
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #404040;
+	border: 7px solid #202020;
+}
+
+#boxtitle {
+	background-color: #3e86ff;
+	text-align: center;
+	color: #202020;
+	font-weight: bold;
+	font-size: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+}
+
+#errorbox {
+	width: 300px;
+	margin-left: 40px;
+	margin-right: 40px;
+	font-size: 13px;
+	background-color: #ff1010;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	margin-bottom: 10px;
+}
+
+#username-fld, #password-fld, .submit-btn {
+	padding: 10px;
+	margin-left: 40px;
+	margin-right: 40px;
+	width: 320px;
+	margin-top: 10px;
+	background-color: #808080;
+	color: #c0c0c0;
+}
+
+.submit-btn {
+	background-color: #3e86ff;
+	color: #202020;
+}
+
+#forgot {
+	margin-left: 50px;
+	margin-top: 10px;
+	font-size: 13px;
+}
+
+#forgot a, #forgot a:visited, #forgot a:hover, #forgot a:active {
+	text-decoration: none;
+	color: #c0c0c0;
+}
+
+#signup {
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 13px;
+}
+
+#signup a, #signup a:visited, #signup a:hover, #signup a:active {
+	text-decoration: none;
+	color: #c0c0c0;
+}
+
+#forgot a:hover, #signup a:hover {
+	text-decoration: underline;
+}

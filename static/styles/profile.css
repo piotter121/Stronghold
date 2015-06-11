@@ -1,0 +1,149 @@
+#page {
+	width: 700px;
+	height: 793px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	margin-bottom: 10px;
+	border: 5px solid #404040;
+}
+
+#prof-title, #sec-title {
+	background-color: #ffffff;
+	font-size: 25px;
+	padding: 10px;
+}
+
+#prof-title {
+	border-bottom: 1px solid #808080;
+}
+
+#avatar {
+	padding-top: 10px;
+	background-color: #ffffff;
+	float: right;
+	height: 300px;
+}
+
+#avatar img {
+	width: 300px;
+	height: 300px;
+}
+
+#info {
+	width: 380px;
+	height: 290px;
+	float: right;
+	background-color: #ffffff;
+	padding-left: 20px;
+	padding-top: 20px;
+}
+
+#info p {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.label {
+	text-align: right;
+	width: 100px;
+	padding-right: 10px;
+	height: 30px;
+	vertical-align: top;
+	line-height: 30px;
+}
+
+input, textarea {
+	border: none;
+	line-height: 30px;
+	background-color: #c0c0c0;
+	width: 250px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 5px;
+}
+
+textarea {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	line-height: normal;
+	resize: none;
+	height: 110px;
+}
+
+#color {
+	width: 60px;
+	background-color: transparent;
+	padding: 0px;
+}
+
+#btn-back {
+	background-color: #ffffff;
+}
+
+.submit-btn {
+	border-radius: 0px;
+	color: #202020;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-top: 30px;
+	margin-left: 225px;
+	margin-right: 225px;
+	margin-bottom: 30px;
+	width: 250px;
+	background-color: #43c000;
+	margin-top: 30px
+}
+
+#sec-title {
+	border-top: 1px solid #808080;
+	border-bottom: 1px solid #808080;
+	clear: both;
+}
+
+#security {
+	background-color: #ffffff;
+	width: 700px;
+	float: left;
+	background-color: #ffffff;
+}
+
+.sec_info {
+	margin: 10px;
+	color: #606060;
+}
+
+.passinput {
+	margin-left: 225px;
+	margin-right: 225px;
+	margin-top: 10px;
+}
+
+#cherrorbox, #infobox {
+	position: relative;
+	width: 230px;
+	margin-left: 225px;
+	margin-right: 225px;
+	font-size: 13px;
+	background-color: #ff1010;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	margin-bottom: 10px;
+}
+
+#errorbox, #posinfobox {
+	font-size: 13px;
+	background-color: #ff1010;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	margin-bottom: 10px;
+	width: 350px;
+}
+
+#infobox, #posinfobox {
+	background-color: #51ec4a;
+}
