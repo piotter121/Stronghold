@@ -1,0 +1,40 @@
+<html>
+<head>
+<link rel=stylesheet type=text/css
+	href="{{ url_for('static', filename='styles/signin.css') }}">
+<script type=text/javascript
+	src="{{ url_for('static', filename='scripts/jquery.min.js') }}"></script>
+<title>foRtReSS - Sign In</title>
+</head>
+<body>
+	<p id="logo">
+		<a href="{{ url_for('home') }}">foRtReSS</a>
+	</p>
+	<div id="signinbox">
+		<p id="boxtitle">Sign In</p>
+		{% if error %}<p id="errorbox">{{error}}</p>{% endif %}
+		<form action="{{ url_for('signin') }}" method="post">
+			<input type=hidden name=_csrf_token value="{{ csrf_token() }}">
+			<p>
+				<input id="username-fld" maxlength="10" autofocus="autofocus" name="username" placeholder="Username"
+					type="text">
+			</p>
+			<p>
+				<input id="password-fld" maxlength="16" name="password" placeholder="Password"
+					type="password">
+			</p>
+			<p id="forgot">
+				<a href="{{ url_for('forgot') }}">Forgot password?</a>
+			</p>
+			<p>
+				<input class="submit-btn" type="submit" value="Sign In">
+			</p>
+			<p id="signup">
+				<a href="{{ url_for('signup') }}">Don't have an account? Sign Up</a>
+			</p>
+		</form>
+	</div>
+	<script type=text/javascript
+		src="{{ url_for('static', filename='scripts/submit.js') }}"></script>
+</body>
+</html>

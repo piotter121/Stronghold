@@ -1,0 +1,37 @@
+{% extends "home.html" %} {% block body %}
+<title>foRtReSS - {{ author }}</title>
+<link rel=stylesheet type=text/css
+	href="{{ url_for('static', filename='styles/view.css') }}">
+<div id="page" style="border-color: {{ info[0].color }}">
+<p>Profile Info</p>
+<hr>
+	<table>
+		<tr>
+			<td class="info">First Name</td>
+			<td><input type="text" disabled="disabled" value="{{ info[0].name }}"></td>
+		</tr>
+		<tr>
+			<td class="info">Last Name</td>
+			<td><input type="text" disabled="disabled" value="{{ info[0].surname }}"></td>
+		</tr>
+		<tr>
+			<td class="info">Email</td>
+			<td><input type="text" disabled="disabled" value="{{ info[0].email }}"></td>
+		</tr>
+		<tr>
+			<td class="info">Profile Color</td>
+			<td><input type="color" disabled="disabled" id="color" value="{{ info[0].color }}"></td>
+		</tr>
+		<tr>
+			<td class="info">About</td>
+			<td><textarea disabled="disabled">{{ info[0].about }}</textarea></td>
+		</tr>
+	</table>
+	Forts
+	{% for fort in forts %}
+	<hr>
+	<p>{{fort.data}}</p>
+	<p style="margin-bottom: 10px;">{{fort.entry}}</p>
+	{% endfor %}
+</div>
+{% endblock %}

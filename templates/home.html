@@ -21,12 +21,16 @@
 		<li><a href="{{ url_for('signout') }}" class="anim">Wyloguj</a></li>
 		<li><a href="{{ url_for('profile') }}" class="anim">Moj profil</a></li>
 		{% if session.logged_user == "admin"%}
-		<li><a href="{{ url_for('database') }}" class="anim">Baza danych</a></li>
+		<li><a href="{{ url_for('database') }}">Baza danych</a></li>
+		{% endif %}
+		<li><a href="{{ url_for('home') }}">Strona glowna</a></li>
 	</ul>
 
-</ul>
-
 </div>
+
+	<script type=text/javascript src="{{ url_for('static', filename='scripts/home.js') }}"></script>
+	<div id="over"></div>
+	{% block body %}{% endblock %}
 
 </body>
 
