@@ -1,17 +1,17 @@
-# -*- coding: utf-8 -*-
-# wszystkie importy
 import sqlite3
-from flask import Flask, request, session, g, redirect, url_for, \
-     abort, render_template, flash
+from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash
 from contextlib import closing
+from pass_check import hash_password, compare_password, random_string
+import time
+import smtplib
+import re
+import io
 
-# konfiguracja
-DATABASE = 'Stronghold.db'
+DATABASE = 'database/Stronghold.db'
 SECRET_KEY = 'development.key'
 SERVER_MAIL = 'rraf@spoko.pl'
 SERVER_PASS = 'Mahdi248'
 
-# tworzenie aplikacji
 app = Flask(__name__)
 app.config.from_object(__name__)
 
@@ -79,7 +79,6 @@ def addfort():
     else:
         g.db.execute('INSERT INTO entries (author, text, data) VALUES (?, ?, ?)',
                  [session['logged_user'], text, time.strftime("%c")])
-        g.db.execute('INSERT INTO entries (author, text, data) VALUES (?, ?, ?)',[session['logged_user'], text, time.strftime("%c")])
         g.db.commit()
     return redirect(url_for('forts'))
     
@@ -330,4 +329,4 @@ def generate_csrf_token():
 app.jinja_env.globals['csrf_token'] = generate_csrf_token
 
 if __name__ == "__main__":
-	app.run(host='0.0.0.0', port=8000, debug=True, ssl_context=('certificate/server.crt', 'certificate/server.key'))
+	app.run(host='0.0.0.0', port=8000, debug=True, )

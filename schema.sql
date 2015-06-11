@@ -1,19 +1,20 @@
-DROP TABLE IF EXISTS entries;
-CREATE TABLE entries (
-	id INTEGER PRIMARY KEY AUTOINCREMENT,
-	author TEXT NOT NULL,
-	'text' TEXT NOT NULL
+drop table if exists entries;
+create table entries (
+    id integer primary key autoincrement,
+    author text not null,
+    text text not null,
+    data text
 );
 
-DROP TABLE IF EXISTS users;
-CREATE TABLE users (
-	id INTEGER PRIMARY KEY AUTOINCREMENT,
-	username TEXT NOT NULL,
-	password TEXT NOT NULL,
-	name TEXT,
-	surname TEXT,
-	email TEXT,
-	color TEXT,
-	about TEXT,
-	ip TEXT
+drop table if exists users;
+create table users (
+	id integer primary key autoincrement,
+	username text not null,
+	password text not null,
+	name text,
+	surname text,
+	email text,
+	color text,
+	about text,
+	ip text
 );
