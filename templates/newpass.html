@@ -1,11 +1,8 @@
 <html>
 <head>
-<title>foRtReSS - New Password</title>
+<title>Nowe hasło</title>
 </head>
 <style>
-body {
-	background-color: #404040;
-}
 p {
 	text-align: center;
 }
@@ -27,16 +24,16 @@ p {
 		<form method="post" action="{{ url_for('newpass') }}">
 			<input type=hidden name=_csrf_token value="{{ csrf_token() }}">
 			<input type=hidden name=username value="{{ user }}">
-			<p>New Password:</p>
+			<p>Nowe hasło</p>
 			<p>
 				<input type="password" name='new_pass'>
 			</p>
-			<p>Retype new password:</p>
+			<p>Ponownie wpisz nowe hasło</p>
 			<p>
 				<input type="password" name='re_new_pass'>
 			</p>
 			<p>
-				<input type="submit" value="Change password">
+				<input type="submit" value="Zmień hasło">
 			</p>
 		</form>
 		{% if error %}

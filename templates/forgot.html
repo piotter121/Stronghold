@@ -1,42 +1,30 @@
 <html>
 <head>
-<title>foRtReSS - Forgotten Password</title>
+<title>Zapomniano hasła</title>
 </head>
 <style>
-body {
-	background-color: #404040;
-}
 p {
 	text-align: center;
 }
-#page {
-	width: 300px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 100px;
-	padding: 20px;
-	border: 2px solid #606060;
-	background-color: #ffffff;
-}
 #er {
-	background-color: #faf8b3;
+	background-color: red;
 }
 </style>
 <body>
-	<div id="page">
+	<div>
 		<form action="{{ url_for('forgot') }}" method="post">
 			<input type=hidden name=_csrf_token value="{{ csrf_token() }}">
-			<p>Please type your username below</p>
+			<p>Proszę wprowadzić poniżej nazwę użytkownika</p>
 			<p>
-				<input type="text" maxlength="10" placeholder="Username"
-					name="username"><input type="submit" value="Send">
+				<input type="text" maxlength="10" placeholder="Nazwa użytkownika"
+					name="username"><input type="submit" value="Wyślij">
 			</p>
 		</form>
 		{% if error %}
 		<p id=er>{{error}}</p>
 		{% endif %}
 		<p>
-			<a href="{{ url_for('home') }}">Back to Home Page</a>
+			<a href="{{ url_for('home') }}">Powrót do strony domowej</a>
 		</p>
 	</div>
 </body>

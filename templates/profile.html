@@ -1,9 +1,7 @@
 {% extends "home.html" %} {% block body %}
 <title>foRtReSS - Profile</title>
-<link rel=stylesheet type=text/css
-	href="{{ url_for('static', filename='styles/profile.css') }}">
 <div id="page">
-	<p id="prof-title">Profile info</p>
+	<p>Mój profil</p>
 	<div>
 		<div id="info">
 			{% if error %}<div id="errorbox">{{ error }}</div>{% endif %}
@@ -13,32 +11,12 @@
 				<table>
 					<input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
 					<tr>
-						<td class="label">First Name:</td>
-						<td><input name="fname" type="text" maxlength="20" value="{{ info[0]['name'] }}"></td>
-					</tr>
-					<tr>
-						<td class="label">Last Name:</td>
-						<td><input name="lname" type="text" maxlength="20" value="{{ info[0]['surname'] }}"></td>
-					</tr>
-					<tr>
 						<td class="label">E-mail:</td>
 						<td><input name="email" id="email" maxlength="40" type="text" value="{{ info[0]['email'] }}"></td>
-					</tr>
-					<tr>
-						<td class="label">Profile color:</td>
-						<td><input name="color" id="color" type="color" value="{{ info[0]['color'] }}"></td>
-					</tr>
-					<tr>
-						<td class="label">About:</td>
-						<td><textarea id="about" name="about" maxlength="120">{{ info[0]['about'] }}</textarea></td>
 					</tr>
 				</table>
 			</form>
 		</div>
-		<div id="avatar">
-			<p>
-				<img src="{{ url_for('static', filename='images/profile.png') }}">
-			</p>
 
 		</div>
 		<p id="btn-back">
@@ -46,28 +24,26 @@
 				form="profile_info">
 		</p>
 	</div>
-	<p id="sec-title">Security</p>
-	<div id="security">
-		<p class="sec_info">If you want to change your password, fill the
-			fields listed below</p>
+	<div>
+		<p>Jeśli chcesz zmienić hasło wypełnij pola poniżej</p>
 		<div style="height:20px;">{% if cherror %}<p id="cherrorbox">{{ cherror }}</p>{% endif %}
 		{% if posinfo %}<p id="infobox">{{ posinfo }}</p>{% endif %}</div>
 		<form method="post" action="{{ url_for('changepass') }}">
 		<input type="hidden" name=_csrf_token value="{{ csrf_token() }}">
 			<p>
-				<input class="passinput" name="old_pass" placeholder="Old password"
+				<input name="old_pass" placeholder="Stare hasło"
 					type="password">
 			</p>
 			<p>
-				<input class="passinput" name="new_pass" placeholder="New password"
+				<input class="passinput" name="new_pass" placeholder="Nowe hasło"
 					type="password">
 			</p>
 			<p>
 				<input class="passinput" name="re_new_pass"
-					placeholder="Retype new password" type="password">
+					placeholder="Ponownie wpisz nowe hasło" type="password">
 			</p>
 			<p>
-				<input class="submit-btn" type="submit" value="Change password">
+				<input type="submit" value="Zmień hasło">
 			</p>
 		</form>
 	</div>

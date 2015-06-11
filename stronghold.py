@@ -24,13 +24,13 @@ def init_db():
 			db.cursor().executescript(f.read())
 		db.commit()
 
-def hex_to_rgb(value):
-    value = value.lstrip('#')
-    lv = len(value)
-    return tuple(int(value[i:i + lv // 3], 16) for i in range(0, lv, lv // 3))
+#def hex_to_rgb(value):
+#    value = value.lstrip('#')
+#    lv = len(value)
+#    return tuple(int(value[i:i + lv // 3], 16) for i in range(0, lv, lv // 3))
 
-def rgb_to_hex(rgb):
-    return '#%02x%02x%02x' % rgb
+#def rgb_to_hex(rgb):
+#    return '#%02x%02x%02x' % rgb
 
 @app.before_request
 def before_request():
@@ -53,18 +53,18 @@ def forts(loginfo=None):
     color_tmp = [dict(username=row[0], color=row[1]) for row in col_cur.fetchall()]
     color = {}
     bgcolor = {}
-    for crl in color_tmp:
-        c = hex_to_rgb(crl['color'])
-        d = (c[0] + 44, c[1] + 44, c[2] + 44)
-        if d[0] > 255:
-            d = (255, d[1], d[2])
-        if d[1] > 255:
-            d = (d[0], 255, d[2])
-        if d[2] > 255:
-            d = (d[0], d[1], 255)
-        color[crl['username']] = rgb_to_hex(d)
-        d = (c[0] / 2, c[1] / 2, c[2] / 2)
-        bgcolor[crl['username']] = rgb_to_hex(d)
+    #for crl in color_tmp:
+    #    c = hex_to_rgb(crl['color'])
+    #    d = (c[0] + 44, c[1] + 44, c[2] + 44)
+    #    if d[0] > 255:
+    #        d = (255, d[1], d[2])
+    #    if d[1] > 255:
+    #        d = (d[0], 255, d[2])
+    #    if d[2] > 255:
+    #        d = (d[0], d[1], 255)
+    #    color[crl['username']] = rgb_to_hex(d)
+    #    d = (c[0] / 2, c[1] / 2, c[2] / 2)
+    #    bgcolor[crl['username']] = rgb_to_hex(d)
     cur = g.db.execute('SELECT author, text FROM entries ORDER BY id DESC')
     entries = [dict(author=row[0], text=row[1]) for row in cur.fetchall()]
     return render_template('forts.html', entries=entries, color=color, bgcolor=bgcolor, loginfo=loginfo)
