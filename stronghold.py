@@ -34,5 +34,10 @@ def teardown_request(exception):
 	if db is not None:
 		db.close()
 
+@app.route('/')
+@app.route('/home')
+def home(loginfo=None):
+	return forts(loginfo)
+
 if __name__ == "__main__":
 	app.run(host='0.0.0.0', debug=True)
